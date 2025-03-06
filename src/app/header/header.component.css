@@ -1,0 +1,49 @@
+/* Supprime les puces des listes pour que les éléments de navigation ne ressemblent pas à une liste classique */
+nav ul {
+  list-style: none; 
+  display: flex; /* Affiche les éléments en ligne (horizontalement) */
+  gap: 20px; /* Espacement de 20px entre chaque élément */
+}
+
+/* Chaque élément <li> est affiché en ligne (au cas où "display: flex" ne s'applique pas directement) */
+nav li {
+  display: inline;
+}
+
+/* Style des liens de navigation */
+nav a {
+  text-decoration: none; /* Supprime le soulignement des liens */
+  color: #151217; /* Définit la couleur du texte */
+  font-weight: bold; /* Met le texte en gras */
+  cursor: pointer; /* Affiche le curseur "main" pour indiquer qu'il s'agit d'un élément cliquable */
+}
+
+/* Effet au survol des liens */
+nav a:hover {
+  color: #DA001E; /* Change la couleur du texte en rouge foncé lors du survol */
+}
+
+nav {
+  width: 100%; /* Occupe toute la largeur */
+}
+
+header {
+  background-color: #F9D0A3;
+  color: white;
+  display: flex; /* Active le mode flexbox */
+  align-items: center; /* Aligne verticalement les éléments */
+  width: 100%; /* Occupe toute la largeur */
+  position: fixed; /* Fixe le header en haut de la page */
+  top: 0; /* Place le header tout en haut */
+  left: 0; /* Assure qu'il commence depuis le bord gauche */
+}
+
+img {
+  display: flex;
+  flex-direction: row ;
+  align-self: center;
+  width: 80px;
+  height: 80px;
+  border-radius: 30%;
+  margin: 10px;
+}

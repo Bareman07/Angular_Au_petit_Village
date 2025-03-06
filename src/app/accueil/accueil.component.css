@@ -1,0 +1,17 @@
+.Presentation {
+  display: flex;
+  align-items: center;
+  margin: 0;
+  padding: 0;
+  background-color: #151217;
+  color: white;
+}
+
+.Presentation img {
+  flex: 1; /* Permet à l’image de prendre une partie flexible de l’espace */
+  max-width: 200px; /* Largeur max pour éviter que l’image soit trop grande */
+  height: auto; /* Garde le ratio de l’image */
+  border-radius: 10% 0% 0% 10%;
+  margin: 0;
+  object-fit: cover; /* Remplit sans déformer */
+}

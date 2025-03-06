@@ -1,0 +1,16 @@
+nav ul {
+    list-style: none; 
+    display: flex; /* Affiche les éléments en ligne (horizontalement) */
+    gap: 20px; /* Espacement de 20px entre chaque élément */
+  }
+
+  footer {
+    background-color: #F9D0A3; /* Couleur du fond */
+    width: 100%; /* Occupe toute la largeur */
+    position: fixed; /* Fixe le footer en bas */
+    bottom: 0; /* Place le footer tout en bas */
+    left: 0;
+    text-align: center; /* Centre le texte */
+    z-index: 1000; /* Passe au-dessus des autres éléments */
+  }
+  
