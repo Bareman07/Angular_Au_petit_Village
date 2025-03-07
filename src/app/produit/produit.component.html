@@ -1,1 +1,22 @@
-<p>produit works!</p>
+<!-- <div *ngFor="let produit of produits" class="produit"> -->
+    <!-- Affichage de l'image du produit -->
+    <!-- <img [src]="produit.image" [alt]="produit.nom"> -->
+  
+    <!-- Nom du produit -->
+    <!-- <h2>{{ produit.nom }}</h2> -->
+  
+    <!-- Description du produit -->
+    <!-- <p>{{ produit.description }}</p> -->
+  
+    <!-- Prix avec format "€" -->
+    <!-- <p><strong>Prix :</strong> {{ produit.prix }} € </p> --> <!-- ou {{ produit.prix | currency:'EUR' }} -->
+
+  <!-- </div> -->
+
+  <div *ngIf="produit" class="produit">
+    <img class="ImgProduit"   [src]="produit.image" [alt]="produit.nom">
+    <h2>{{ produit.nom }}</h2>
+    <p>{{ produit.description }}</p>
+    <p><strong>Prix :</strong> {{ produit.prix | currency:'EUR' }}</p>
+  </div>
+  

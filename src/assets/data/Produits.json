@@ -4,28 +4,28 @@
       "nom": "Asterix ",
       "description": "Un petit guerrier à l'esprit malin, blond à longues moustaches, portant un casque ailé et une épée à sa ceinture. Il est vêtu d'un débardeur noir et d'un pantalon rouge. Intelligent, aventurier dans l'âme et héroïque. ",
       "prix": 29.99,
-      "image": "/assets/img/Asterix.jpg"
+      "image": "/assets/img/Asterix.jpeg"
     },
     {
       "id": 2,
       "nom": "Obélix",
       "description": "Il est le meilleur ami et le compagnon d'aventures d'Astérix. Il est grand et d'une très forte corpulence, avec de longues moustaches et nattes rouges. Il est vêtu d'un pantalon à rayures verticales bleues ciel et blanches, tenu par une large ceinture verte, lequel lui monte jusque sous les bras, le reste du torse et les bras étant nus. Il porte un petit casque en fer. Obélix est livreur de menhirs.",
       "prix": 19.99,
-      "image": "/assets/img/Obélix.jpg"
+      "image": "/assets/img/Obélix.jpeg"
     },
     {
       "id": 3,
       "nom": "Idéfix",
       "description": "Idéfix (jeu de mots avec l'expression idée fixe) est le chien d'Obélix. De très petite taille et entièrement blanc (à l'exception de sa truffe et de la pointe de ses oreilles, qui, dans les bandes dessinées, sont noires), il tient dans la main.",
       "prix": 24.99,
-      "image": "/assets/img/Idéfix.jpg"
+      "image": "/assets/img/Idéfix.jpeg"
     },
     {
       "id": 4,
       "nom": "Panoramix",
       "description": "Panoramix (jeu de mots avec panoramique) est le druide du village et dépositaire du secret de fabrication de la potion magique. Il apparaît dès le premier album. Plutôt grand, il porte de longs cheveux et moustaches, ainsi qu'une très longue barbe qui tombe jusque par terre, tous blanchis par l'âge. Il est vêtu d'une longue tunique blanche et d'une cape rouge.",
       "prix": 32.99,
-      "image": "/assets/img/Panoramix.jpg"
+      "image": "/assets/img/Panoramix.jpeg"
     }
   ]
   

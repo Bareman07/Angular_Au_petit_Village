@@ -4,35 +4,12 @@
         <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi varius libero magna, at dapibus ante iaculis eu. Phasellus nec luctus risus, eget ullamcorper massa. Nulla interdum ac libero mollis sodales. Praesent commodo augue id est tristique mattis. Nullam tempor dignissim aliquam. Maecenas tincidunt lorem nec dolor egestas, vitae finibus risus molestie. Suspendisse tortor ligula, bibendum condimentum dui ac, eleifend laoreet dui. Sed fermentum quam vel scelerisque tristique. Aliquam lacinia felis a velit lacinia faucibus vitae at turpis. Aenean eu odio eu magna ornare tempus ut eu tortor.</p>
         <img src="/assets/img/favicon.jpg" alt="favicon">
     </div>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
-    <p>accueil works!</p>
+    <div *ngFor="let produit of produits | slice:0:4" class="produit">
+        <img class="ImgProduit" [src]="produit.image" [alt]="produit.nom">
+        <h2>{{ produit.nom }}</h2>
+        <p>{{ produit.description }}</p>
+        <p><strong>Prix :</strong> {{ produit.prix | currency:'EUR' }}</p>
+        <a [routerLink]="['/produit', produit.id]">Voir le produit</a>
+    </div>
+    
 </main>
