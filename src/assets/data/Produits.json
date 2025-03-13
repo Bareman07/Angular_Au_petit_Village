@@ -26,6 +26,13 @@
       "description": "Panoramix (jeu de mots avec panoramique) est le druide du village et dépositaire du secret de fabrication de la potion magique. Il apparaît dès le premier album. Plutôt grand, il porte de longs cheveux et moustaches, ainsi qu'une très longue barbe qui tombe jusque par terre, tous blanchis par l'âge. Il est vêtu d'une longue tunique blanche et d'une cape rouge.",
       "prix": 32.99,
       "image": "/assets/img/Panoramix.jpeg"
+    },
+    {
+      "id": 5,
+      "nom": "Assurancetourix",
+      "description": "Assurancetourix est le barde du village d'Astérix et Obélix dans la bande dessinée Astérix de René Goscinny et Albert Uderzo ; il chante comme une casserole. Il est souvent bâillonné pour éviter qu'il ne chante. Il est le seul personnage du village qui n'a pas de rôle précis, si ce n'est celui de barde.",
+      "prix": 27.99,
+      "image": "/assets/img/Assurancetourix.jpeg"
     }
   ]
   

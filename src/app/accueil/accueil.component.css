@@ -22,3 +22,36 @@
   height: 150px;
   border-radius: 30%;
 }
+
+.produit {
+  display: flex;
+  align-items: center;
+  margin: 10px;
+  padding: 10px;
+  background-color: #151217;
+  color: white;
+  border : 5px solid #FDD90B ;
+  border-radius: 10px;
+}
+
+.produit h2 {
+  margin: 5px;
+  padding: 5px;
+  font-size: 1.5em;
+  color: #DA001E;
+}
+
+.produit p {
+  margin: 5px;
+  padding: 5px;
+  font-size: 1em;
+  color: white;
+}
+
+.produit a {
+  margin: 5px;
+  padding: 5px;
+  font-size: 1em;
+  color: #FDD90B;
+  text-decoration: none;
+}
