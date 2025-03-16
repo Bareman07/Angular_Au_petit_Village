@@ -15,7 +15,9 @@ import { TrierPipe } from '../pipes/trier.pipe'; // Vérifie le chemin du fichie
 })
 export class AccueilComponent {
   produits: Produit[] = []; // Tableau pour stocker les produits récupérés
+  produitsFiltres: Produit[] = []; // Liste après filtrage
   critereTri: string = 'nomAsc'; // Tri par défaut (nom A-Z)
+  searchTerm: string = ''; // Initialisation du champ de recherche
   produitsAffiches: Produit[] = []; // Liste des produits affichés sur la page actuelle
   pageActuelle = 1; // Numéro de la page en cours
   articlesParPage = 3; // Nombre de produits affichés par page (modifiable)
@@ -28,17 +30,36 @@ export class AccueilComponent {
       console.log("Produits récupérés :", data); // Ajout du log
       this.produits = data; // Stocke les produits dans le tableau
       // this.updateProduitsAffiches(); // Mise à jour des produits affichés
-      this.appliquerTriEtPagination(); // Appliquer le tri et la pagination
+      this.appliquerRechercheEtTri(); // Appliquer le tri et la pagination
     });
   }
 
-   // Appliquer le tri puis la pagination
-  appliquerTriEtPagination() {
-    // Utiliser le pipe TrierPipe pour trier les produits avant de les afficher
-    const produitsTries = new TrierPipe().transform(this.produits, this.critereTri);
+  //  // Appliquer le tri puis la pagination
+  // appliquerTriEtPagination() {
+  //   // Utiliser le pipe TrierPipe pour trier les produits avant de les afficher
+  //   const produitsTries = new TrierPipe().transform(this.produits, this.critereTri);
 
-    // Appliquer la pagination sur les produits triés
-    this.produitsAffiches = produitsTries.slice((this.pageActuelle - 1) * this.articlesParPage, this.pageActuelle * this.articlesParPage);
+  //   // Appliquer la pagination sur les produits triés
+  //   this.produitsAffiches = produitsTries.slice((this.pageActuelle - 1) * this.articlesParPage, this.pageActuelle * this.articlesParPage);
+  // }
+
+  
+  // Applique la recherche, le tri (via le pipe) et la pagination.
+  appliquerRechercheEtTri() {
+    // 1 Recherche : Filtrer les produits selon le texte recherché
+    this.produitsFiltres = this.produits.filter(produit =>
+      produit.nom.toLowerCase().includes(this.searchTerm.toLowerCase())
+    );
+
+    // 2 Tri : Utiliser le pipe pour trier les produits filtrés
+    const trierPipe = new TrierPipe();
+    const produitsTries = trierPipe.transform(this.produitsFiltres, this.critereTri);
+
+    // 3 Pagination : Découper la liste en fonction de la page actuelle
+    this.produitsAffiches = produitsTries.slice(
+      (this.pageActuelle - 1) * this.articlesParPage,
+      this.pageActuelle * this.articlesParPage
+    );
   }
 
   // Fonction pour changer la page et mettre à jour l'affichage
@@ -46,12 +67,12 @@ export class AccueilComponent {
     const nouvellePage = this.pageActuelle + sens;
     if (nouvellePage > 0 && nouvellePage <= this.totalPages) {
       this.pageActuelle = nouvellePage;
-      this.appliquerTriEtPagination(); // Réappliquer tri et pagination
+      this.appliquerRechercheEtTri(); // Réappliquer tri et pagination
     }
   }
 
   // Calcul du nombre total de pages
   get totalPages(): number {
-    return Math.ceil(this.produits.length / this.articlesParPage);
+    return Math.ceil(this.produitsFiltres.length / this.articlesParPage);
   }
 }

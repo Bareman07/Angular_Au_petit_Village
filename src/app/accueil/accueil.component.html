@@ -6,12 +6,16 @@
     </div>
     <!-- Menu déroulant pour choisir le tri des produits -->
     <label for="tri">Trier par :</label>
-    <select id="tri" [(ngModel)]="critereTri" (ngModelChange)="appliquerTriEtPagination()"> <!--[(ngModel)]="critereTri" : Lier la sélection au critère de tri. (ngModelChange)="appliquerTriEtPagination()" : Appliquer le tri et la pagination à chaque changement de critère.-->
+    <!-- Champ de recherche -->
+    <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="appliquerRechercheEtTri()" placeholder="Rechercher un produit..." />
+    <select id="tri" [(ngModel)]="critereTri" (ngModelChange)="appliquerRechercheEtTri()"> <!--[(ngModel)]="critereTri" : Lier la sélection au critère de tri. (ngModelChange)="appliquerTriEtPagination()" : Appliquer le tri et la pagination à chaque changement de critère.-->
         <option value="nomAsc">Nom (A-Z)</option>
         <option value="nomDesc">Nom (Z-A)</option>
         <option value="prixAsc">Prix (croissant)</option>
         <option value="prixDesc">Prix (décroissant)</option>
     </select>
+    <!-- Champ de recherche -->
+    <!-- <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="appliquerFiltre()" placeholder="Rechercher un produit..."> -->
      <!-- Boucle sur les produits affichés -->
     <div *ngFor="let produit of produitsAffiches | trier: critereTri" class="produit">
         <img class="ImgProduit" [src]="produit.image" [alt]="produit.nom">
