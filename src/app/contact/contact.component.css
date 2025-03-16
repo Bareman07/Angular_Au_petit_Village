@@ -1,0 +1,43 @@
+.contact-container {
+    max-width: 600px;
+    margin: 2em;
+    padding: 2em;
+    background-color: #151217 ;
+    border-radius: 10px;
+    border: 0.5em solid #FDD90B ;
+  }
+  
+  label {
+    display: block;
+    margin-top: 1rem;
+    font-weight: bold;
+    color: #F9D0A3 ;
+  }
+  
+  input, textarea {
+    width: 100%;
+    padding: 0.5rem;
+    margin-top: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  button {
+    margin-top: 1rem;
+    padding: 0.7rem 1.2rem;
+    background-color: #DA001E;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  /* button[disabled] {
+    background-color: #DA001E;
+    cursor: not-allowed;
+  } */
+  
+  h1 {
+    text-align: center;
+    color: #DA001E ;
+  }
