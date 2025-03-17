@@ -10,4 +10,10 @@ import { RouterModule } from '@angular/router'; // Permet d'utiliser routerLink 
   templateUrl: './header.component.html', // Fichier HTML associé au composant
   styleUrls: ['./header.component.css'] // Fichier CSS associé au composant
 })
-export class HeaderComponent {} // Définition et exportation du composant pour qu'il puisse être utilisé ailleurs
+// Définition et exportation du composant pour qu'il puisse être utilisé ailleurs
+export class HeaderComponent {
+  menuOuvert = false;
+  toggleMenu() {
+  this.menuOuvert = !this.menuOuvert;
+  } 
+} 

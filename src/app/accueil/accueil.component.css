@@ -55,3 +55,39 @@
   color: #FDD90B;
   text-decoration: none;
 }
+
+/* Media query : s'applique pour une largeur de 759px ou moins */
+@media (max-width: 759px) {
+  .Presentation {
+    flex-direction: column; /* Les éléments se placent de haut en bas */
+    text-align: center; /* Centrer le texte si besoin */
+  }
+
+  .Presentation img {
+    border-radius: 10% 10% 0 0; /* Arrondir le bas de l'image pour le style */
+    margin-top: 10px; /* Un petit espace entre le texte et l'image */
+  }
+  .produit {
+    flex-direction: column; /* Les éléments se placent en colonne */
+    text-align: center; /* Centrer le contenu */
+  }
+
+  .produit img {
+    margin: 10px auto; /* Centrer l’image */
+  }
+
+  .prouidtInfo {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .produit h2 {
+    order: -1; /* Place le titre tout en haut */
+    margin-top: 10px;
+  }
+
+  .produit a {
+    margin-top: 10px; /* Espace entre le texte et le lien */
+  }
+}

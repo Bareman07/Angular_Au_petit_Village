@@ -1,4 +1,5 @@
 <main class="contact-container">
+  <div>
     <h1>Contactez-nous</h1>
     
     <form (ngSubmit)="envoyerMessage()" #formulaire="ngForm">
@@ -25,5 +26,6 @@
       <!-- Bouton Envoyer désactivé si formulaire non valide -->
       <button type="submit" [disabled]="formulaire.invalid">Envoyer</button>
     </form>
-  </main>
+  </div>
+</main>
   

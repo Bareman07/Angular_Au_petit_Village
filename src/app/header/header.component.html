@@ -2,7 +2,9 @@
   <div class="logo">
     <img src="/assets/img/Logo_au petit village.jpg" alt="Logo">
   </div>
-  <nav>
+  <!-- Bouton burger visible uniquement sur petits écrans -->
+  <button class="burger" (click)="toggleMenu()">☰</button>
+  <nav [class.open]="menuOuvert">
     <ul>
       <li><a routerLink="/" routerLinkActive="active">Accueil</a></li>
       <li><a routerLink="/about" routerLinkActive="active">À propos</a></li>

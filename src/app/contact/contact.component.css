@@ -5,6 +5,7 @@
     background-color: #151217 ;
     border-radius: 10px;
     border: 0.5em solid #FDD90B ;
+    margin: 2em auto; /* Centré horizontalement */
   }
   
   label {
@@ -31,12 +32,7 @@
     border-radius: 5px;
     cursor: pointer;
   }
-  
-  /* button[disabled] {
-    background-color: #DA001E;
-    cursor: not-allowed;
-  } */
-  
+
   h1 {
     text-align: center;
     color: #DA001E ;
