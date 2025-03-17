@@ -8,20 +8,18 @@
     <label for="tri">Trier par :</label>
     <!-- Champ de recherche -->
     <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="appliquerRechercheEtTri()" placeholder="Rechercher un produit..." />
-    <select id="tri" [(ngModel)]="critereTri" (ngModelChange)="appliquerRechercheEtTri()"> <!--[(ngModel)]="critereTri" : Lier la sélection au critère de tri. (ngModelChange)="appliquerTriEtPagination()" : Appliquer le tri et la pagination à chaque changement de critère.-->
+    <!--[(ngModel)]="critereTri" : Lier la sélection au critère de tri. (ngModelChange)="appliquerRechercheEtTri()" : Appliquer le tri et la pagination à chaque changement de critère.-->
+    <select id="tri" [(ngModel)]="critereTri" (ngModelChange)="appliquerRechercheEtTri()"> 
         <option value="nomAsc">Nom (A-Z)</option>
         <option value="nomDesc">Nom (Z-A)</option>
         <option value="prixAsc">Prix (croissant)</option>
         <option value="prixDesc">Prix (décroissant)</option>
     </select>
-    <!-- Champ de recherche -->
-    <!-- <input type="text" [(ngModel)]="searchTerm" (ngModelChange)="appliquerFiltre()" placeholder="Rechercher un produit..."> -->
      <!-- Boucle sur les produits affichés -->
-    <div *ngFor="let produit of produitsAffiches | trier: critereTri" class="produit">
+    <div *ngFor="let produit of produitsAffiches | rechercheProduit: searchTerm | trier: critereTri" class="produit">
         <img class="ImgProduit" [src]="produit.image" [alt]="produit.nom">
         <div class="prouidtInfo">
             <h2>{{ produit.nom }}</h2>
-            <!-- <p>{{ produit.description }}</p> -->
             <p><strong>Prix :</strong> {{ produit.prix | currency:'EUR' }}</p>
             <a [routerLink]="['/produit', produit.id]">Voir plus</a>
         </div>

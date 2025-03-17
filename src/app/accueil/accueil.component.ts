@@ -4,15 +4,17 @@ import { RouterModule } from '@angular/router'; // Import du RouterModule
 import { ProduitService, Produit } from '../services/produit.service'; // On importe le service et l'interface Produit
 import { FormsModule } from '@angular/forms';
 import { TrierPipe } from '../pipes/trier.pipe'; // Vérifie le chemin du fichier
+import { RechercheProduitPipe } from '../pipes/recherche-produit.pipe'; // Import du pipe de recherche
 
 
 @Component({
   selector: 'app-accueil',
   standalone: true, // Important pour Angular sans app.module.ts
-  imports: [CommonModule, RouterModule, FormsModule, TrierPipe], // Ajout de RouterModule // Ajout du CommonModule pour utiliser | currency
+  imports: [CommonModule, RouterModule, FormsModule, TrierPipe, RechercheProduitPipe], // Ajout de RouterModule // Ajout du CommonModule pour utiliser | currency
   templateUrl: './accueil.component.html',
-  styleUrl: './accueil.component.css'
+  styleUrls: ['./accueil.component.css']
 })
+
 export class AccueilComponent {
   produits: Produit[] = []; // Tableau pour stocker les produits récupérés
   produitsFiltres: Produit[] = []; // Liste après filtrage
@@ -22,57 +24,50 @@ export class AccueilComponent {
   pageActuelle = 1; // Numéro de la page en cours
   articlesParPage = 3; // Nombre de produits affichés par page (modifiable)
 
-  constructor(private produitService: ProduitService) {} // Injection du service
+  constructor(private produitService: ProduitService) {} // Injection du ProduitService
 
   ngOnInit(): void {
-    // Appelle le service pour récupérer les produits au chargement du composant
+    // Lors du chargement du composant, on récupère les produits
     this.produitService.getProduits().subscribe(data => {
-      console.log("Produits récupérés :", data); // Ajout du log
-      this.produits = data; // Stocke les produits dans le tableau
-      // this.updateProduitsAffiches(); // Mise à jour des produits affichés
-      this.appliquerRechercheEtTri(); // Appliquer le tri et la pagination
+      this.produits = data; // Stocke les produits récupérés dans la variable produits
+      this.appliquerRechercheEtTri(); // Applique recherche et tri dès que les produits sont récupérés
     });
   }
 
-  //  // Appliquer le tri puis la pagination
-  // appliquerTriEtPagination() {
-  //   // Utiliser le pipe TrierPipe pour trier les produits avant de les afficher
-  //   const produitsTries = new TrierPipe().transform(this.produits, this.critereTri);
-
-  //   // Appliquer la pagination sur les produits triés
-  //   this.produitsAffiches = produitsTries.slice((this.pageActuelle - 1) * this.articlesParPage, this.pageActuelle * this.articlesParPage);
-  // }
-
-  
-  // Applique la recherche, le tri (via le pipe) et la pagination.
+  // Appliquer la recherche, le tri et la pagination
   appliquerRechercheEtTri() {
-    // 1 Recherche : Filtrer les produits selon le texte recherché
+    // 1. Appliquer la recherche
     this.produitsFiltres = this.produits.filter(produit =>
       produit.nom.toLowerCase().includes(this.searchTerm.toLowerCase())
     );
 
-    // 2 Tri : Utiliser le pipe pour trier les produits filtrés
+    // 2. Appliquer le tri
     const trierPipe = new TrierPipe();
     const produitsTries = trierPipe.transform(this.produitsFiltres, this.critereTri);
 
-    // 3 Pagination : Découper la liste en fonction de la page actuelle
-    this.produitsAffiches = produitsTries.slice(
+    // 3. Appliquer la pagination
+    this.appliquerPagination(produitsTries);
+  }
+
+  // Méthode pour appliquer la pagination avec les produits triés
+  appliquerPagination(produits: Produit[]) {
+    this.produitsAffiches = produits.slice(
       (this.pageActuelle - 1) * this.articlesParPage,
       this.pageActuelle * this.articlesParPage
     );
   }
 
-  // Fonction pour changer la page et mettre à jour l'affichage
+  // Méthode pour changer de page et réappliquer la pagination
   changerPage(sens: number) {
-    const nouvellePage = this.pageActuelle + sens;
-    if (nouvellePage > 0 && nouvellePage <= this.totalPages) {
+    const nouvellePage = this.pageActuelle + sens; // Changer la page (précédente ou suivante)
+    if (nouvellePage > 0 && nouvellePage <= this.totalPages) { // Vérifie si la page est valide
       this.pageActuelle = nouvellePage;
-      this.appliquerRechercheEtTri(); // Réappliquer tri et pagination
+      this.appliquerPagination(this.produitsFiltres); // Réapplique la pagination avec les produits filtrés
     }
   }
 
   // Calcul du nombre total de pages
   get totalPages(): number {
-    return Math.ceil(this.produitsFiltres.length / this.articlesParPage);
+    return Math.ceil(this.produitsFiltres.length / this.articlesParPage); // Division pour calculer le nombre de pages
   }
 }
