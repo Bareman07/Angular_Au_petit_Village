@@ -27,10 +27,10 @@
     <!-- Pagination : Boutons pour naviguer -->
     <div class="pagination">
         <!-- Bouton pour aller à la page précédente (désactivé si on est déjà à la première page) -->
-        <button (click)="changerPage(-1)" [disabled]="pageActuelle === 1">Précédent</button>
+        <button class="buttonBasDePage" (click)="changerPage(-1)" [disabled]="pageActuelle === 1">Précédent</button>
         <!-- Affichage du numéro de page -->
         <span>Page {{ pageActuelle }} / {{ totalPages }}</span>
         <!-- Bouton pour aller à la page suivante (désactivé si on est sur la dernière page) -->
-        <button (click)="changerPage(1)" [disabled]="pageActuelle >= (produits.length / articlesParPage)">Suivant</button>
+        <button class="buttonBasDePage" (click)="changerPage(1)" [disabled]="pageActuelle >= (produits.length / articlesParPage)">Suivant</button>
     </div>
 </main>

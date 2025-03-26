@@ -30,7 +30,7 @@
   padding: 10px;
   background-color: #151217;
   color: white;
-  border : 5px solid #FDD90B ;
+  border : 5px solid #F9D0A3 ;
   border-radius: 10px;
 }
 
@@ -56,6 +56,21 @@
   text-decoration: none;
 }
 
+label {
+  color: #DA001E;
+}
+
+.buttonBasDePage {
+  background-color: #FDD90B;
+  border-radius: 10px;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  list-style: none;
+  padding: 0;
+}
 /* Media query : s'applique pour une largeur de 759px ou moins */
 @media (max-width: 759px) {
   .Presentation {
