@@ -15,8 +15,8 @@
 
   <div *ngIf="produit" class="produit">
     <img class="ImgProduit"   [src]="produit.image" [alt]="produit.nom">
-    <h2>{{ produit.nom }}</h2>
+    <h1>{{ produit.nom }}</h1>
     <p>{{ produit.description }}</p>
-    <p><strong>Prix :</strong> {{ produit.prix | currency:'EUR' }}</p>
+    <p class="PrixProduit"><strong>Prix :</strong> {{ produit.prix | currency:'EUR' }}</p>
   </div>
   

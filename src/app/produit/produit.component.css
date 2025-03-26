@@ -4,3 +4,24 @@
     height: 150px;
     border-radius: 30%;
 }
+
+.produit {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 10px;
+    padding: 10px;
+    background-color: #151217;
+    color: white;
+    border: 5px solid #F9D0A3;
+    border-radius: 10px;
+}
+
+h1 {
+    text-align: center;
+    color: #DA001E;
+}
+
+.PrixProduit {
+    color: #FDD90B;
+}
