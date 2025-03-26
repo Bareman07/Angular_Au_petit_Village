@@ -50,7 +50,7 @@ img {
 
 /* BOUTON BURGER caché sur grand écran */
 .burger {
-  display: none;
+  display: none; /* Caché par défaut */
   font-size: 2em;
   background: none;
   border: none;
@@ -65,7 +65,7 @@ img {
     position: absolute;
     top: 100px; /* Sous le header */
     right: -10px; /* Collé à droite */
-    width: auto; /* 50% de la largeur de l'écran */
+    width: auto;
     background-color: #F9D0A3;
     padding: 10px;
     margin: 0 10px 10px 0;
@@ -73,12 +73,15 @@ img {
   }
 
   nav.open {
-    display: block;
+    display: block; /* Affiche la navigation */
   }
 
   nav ul {
-    flex-direction: column;
+    flex-direction: column; /* Affiche les éléments en colonne (verticalement) */
     gap: 10px;
+    width: 100%; /* Utiliser toute la largeur */
+    align-items: center; /* Centre horizontalement les liens */
+    padding-left: 0px; /* Supprime le décalage à gauche */
   }
 
   nav li {
@@ -93,6 +96,7 @@ img {
     border-radius: 25%;
     color: #DA001E;
     cursor: pointer;
+    padding: 0px 8px 4px 8px;
     margin-left: auto; /* Pousse le burger complètement à droite */
     margin-right: 10px; /* Ajoute un espace à droite */
   }

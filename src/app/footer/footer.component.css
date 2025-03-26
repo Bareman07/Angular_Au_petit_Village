@@ -14,3 +14,15 @@ nav ul {
     z-index: 1000; /* Passe au-dessus des autres éléments */
   }
   
+/* Style des liens de navigation */
+nav a {
+  text-decoration: none; /* Supprime le soulignement des liens */
+  color: #151217; /* Définit la couleur du texte */
+  font-weight: bold; /* Met le texte en gras */
+  cursor: pointer; /* Affiche le curseur "main" pour indiquer qu'il s'agit d'un élément cliquable */
+}
+
+/* Effet au survol des liens */
+nav a:hover {
+  color: #DA001E; /* Change la couleur du texte en rouge foncé lors du survol */
+}
