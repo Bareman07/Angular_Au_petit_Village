@@ -1,3 +1,7 @@
+.Accueil {
+  padding-bottom: 20px;
+}
+
 .Presentation {
   display: flex;
   align-items: center;
@@ -5,6 +9,11 @@
   padding: 0;
   background-color: #151217;
   color: white;
+}
+
+.Presentation p {
+  margin: 10px;
+  padding: 10px;
 }
 
 .Presentation img {
@@ -104,5 +113,15 @@ label {
 
   .produit a {
     margin-top: 10px; /* Espace entre le texte et le lien */
+  }
+}
+/* Media query : s'applique pour une largeur de 560px ou moins */
+@media (max-width: 560px) {
+  .Accueil { /* Les éléments se placent en colonne */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 90px;
+    padding-bottom: 10px;
   }
 }
