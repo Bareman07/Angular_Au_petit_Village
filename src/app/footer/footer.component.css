@@ -2,6 +2,8 @@ nav ul {
     list-style: none; 
     display: flex; /* Affiche les éléments en ligne (horizontalement) */
     gap: 20px; /* Espacement de 20px entre chaque élément */
+    padding: 0;
+    margin: 0;
   }
 
   footer {
@@ -12,6 +14,13 @@ nav ul {
     left: 0;
     text-align: center; /* Centre le texte */
     z-index: 1000; /* Passe au-dessus des autres éléments */
+    display: flex; /* Active flexbox */
+    justify-content: space-between; /* Répartit les éléments : menu à gauche, réseaux à droite */
+    align-items: center; /* Centre verticalement les éléments */
+    padding: 10px 20px; /* Ajoute un peu d'espace autour */
+    box-sizing: border-box; /* Évite le débordement */
+    max-width: 100%; /* Empêche le dépassement */
+    overflow: hidden; /* Cache les débordements éventuels */
   }
   
 /* Style des liens de navigation */
@@ -25,4 +34,41 @@ nav a {
 /* Effet au survol des liens */
 nav a:hover {
   color: #DA001E; /* Change la couleur du texte en rouge foncé lors du survol */
+}
+
+/* Style des réseaux sociaux */
+.social-links {
+  display: flex;
+  gap: 15px;
+  margin-top: 10px; /* Espace entre le menu et les icônes */
+}
+
+.social-links a {
+  display: inline-block;
+}
+
+.social-links img {
+  width: 30px;
+  height: 30px;
+  transition: transform 0.3s ease-in-out;
+}
+
+.social-links img:hover {
+  transform: scale(1.2);
+}
+
+/* RESPONSIVE : à partir de 789px, les réseaux passent en dessous */
+@media (max-width: 560px) {
+  footer {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    gap: 10px;
+  }
+
+  .social-links {
+    margin-top: 15px; /* Augmente l'espace sous le menu */
+  }
 }

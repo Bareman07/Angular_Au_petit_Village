@@ -1,14 +1,14 @@
 <header>
   <div class="logo">
-    <img src="/assets/img/Logo_au petit village.jpg" alt="Logo">
+    <a routerLink="/" routerLinkActive="active"><img src="/assets/img/Logo_au petit village.jpg" alt="Logo"></a>
   </div>
   <!-- Bouton burger visible uniquement sur petits écrans -->
   <button class="burger" (click)="toggleMenu()"> &#9776; </button>
   <nav [class.open]="menuOuvert"> <!-- Ajout de la classe open si menuOuvert est vrai  liaison de classe dynamique en Angular-->
     <ul>
-      <li><a routerLink="/" routerLinkActive="active">Accueil</a></li>
-      <li><a routerLink="/about" routerLinkActive="active">À propos</a></li>
-      <li><a routerLink="/contact" routerLinkActive="active">Contact</a></li>
+      <li><a routerLink="/" routerLinkActive="active" (click)="fermerMenu()">Accueil</a></li>
+      <li><a routerLink="/about" routerLinkActive="active" (click)="fermerMenu()">À propos</a></li>
+      <li><a routerLink="/contact" routerLinkActive="active" (click)="fermerMenu()">Contact</a></li>
     </ul>
   </nav>
 </header>

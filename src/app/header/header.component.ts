@@ -13,7 +13,14 @@ import { RouterModule } from '@angular/router'; // Permet d'utiliser routerLink 
 // Définition et exportation du composant pour qu'il puisse être utilisé ailleurs
 export class HeaderComponent {
   menuOuvert = false;
+
+  // Ouvre/Ferme le menu burger
   toggleMenu() {
-  this.menuOuvert = !this.menuOuvert;
+    this.menuOuvert = !this.menuOuvert;
   } 
-} 
+
+  // Ferme le menu automatiquement après un clic sur un lien
+  fermerMenu() {
+    this.menuOuvert = false;
+  }
+}
