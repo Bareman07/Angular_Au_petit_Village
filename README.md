@@ -1,59 +1,107 @@
-# AuPetitVillage
+Projet Angular - Site Vitrine "Au Petit Village"
 
-This project was generated using [Angular CLI](https://github.com/angular/angular-cli) version 19.1.7.
+Description
 
-## Development server
+Ce projet est un site vitrine dynamique développé avec Angular pour une entreprise vendant des figurines inspirées d'Astérix & Obélix. Il intègre plusieurs fonctionnalités interactives comme la recherche de produits, le tri, la pagination et une navigation fluide entre les pages grâce au routage Angular.
 
-To start a local development server, run:
+Fonctionnalités
 
-```bash
-ng serve
-```
+Page d'accueil : Présentation de l'entreprise et affichage du catalogue des produits.
 
-Once the server is running, open your browser and navigate to `http://localhost:4200/`. The application will automatically reload whenever you modify any of the source files.
+Page produit détaillée : Description complète de chaque produit.
 
-## Code scaffolding
+Page "À propos" : Informations sur l'entreprise.
 
-Angular CLI includes powerful code scaffolding tools. To generate a new component, run:
+Tri et recherche : Tri des produits par nom ou prix et recherche dynamique.
 
-```bash
-ng generate component component-name
-```
+Gestion des données : Stockage des produits en JSON.
 
-For a complete list of available schematics (such as `components`, `directives`, or `pipes`), run:
+Navigation fluide : Header et footer présents sur toutes les pages.
 
-```bash
-ng generate --help
-```
+Pagination : Affichage des produits par lot pour une meilleure lisibilité.
 
-## Building
+Technologies utilisées
 
-To build the project run:
+Angular (Standalone Mode + SSR) : Framework principal pour le développement.
 
-```bash
-ng build
-```
+Angular CLI : Outil de gestion du projet.
 
-This will compile your project and store the build artifacts in the `dist/` directory. By default, the production build optimizes your application for performance and speed.
+TypeScript : Langage principal utilisé.
 
-## Running unit tests
+Bootstrap : Pour le style et la mise en page.
 
-To execute unit tests with the [Karma](https://karma-runner.github.io) test runner, use the following command:
+SCSS : Feuilles de style avancées.
 
-```bash
-ng test
-```
+Git/GitHub : Versioning et stockage du projet.
 
-## Running end-to-end tests
+Installation et exécution
 
-For end-to-end (e2e) testing, run:
+Prérequis
 
-```bash
-ng e2e
-```
+Node.js (v16+ recommandé)
 
-Angular CLI does not come with an end-to-end testing framework by default. You can choose one that suits your needs.
+Angular CLI installé globalement :
 
-## Additional Resources
+npm install -g @angular/cli
 
-For more information on using the Angular CLI, including detailed command references, visit the [Angular CLI Overview and Command Reference](https://angular.dev/tools/cli) page.
+Un serveur local (optionnel, mais recommandé pour le SSR)
+
+Étapes d'installation
+
+Cloner le repository GitHub :
+
+git clone https://github.com/ton-profil/ton-repo.git
+
+Accéder au dossier du projet :
+
+cd Au_Petit_Village
+
+Installer les dépendances :
+
+npm install
+
+Lancer le serveur de développement :
+
+npm run dev
+
+Accéder au site via :
+
+http://localhost:4200
+
+Structure du projet
+
+src/
+├── app/
+│   ├── accueil/                 # Composant de la page d'accueil
+│   │   ├── accueil.component.ts
+│   │   ├── accueil.component.html
+│   │   ├── accueil.component.css
+│   ├── produit-detail/           # Page détaillée des produits
+│   ├── about/                    # Page "À propos"
+│   ├── services/                 # Services Angular (ex: gestion des produits)
+│   ├── pipes/                    # Pipes de tri et de recherche
+│   ├── shared/                    # Composants partagés (header, footer...)
+├── assets/
+│   ├── images/                   # Images des produits
+├── styles.scss                    # Fichier global de styles
+├── angular.json                   # Configuration Angular
+├── package.json                   # Dépendances et scripts npm
+└── tsconfig.json                   # Configuration TypeScript
+
+Contributions
+
+Les contributions sont les bienvenues ! Pour proposer une amélioration :
+
+Forker le repository
+
+Créer une branche (feature-ma-modif)
+
+Committer les changements (git commit -m "Ajout d'une nouvelle fonctionnalité")
+
+Pousser sur GitHub (git push origin feature-ma-modif)
+
+Ouvrir une Pull Request
+
+Auteur
+
+Développé par [Ton Nom] dans le cadre d'un projet scolaire.
